@@ -8,36 +8,6 @@ create warehouse if not exists dcr_wh;
 /* create role and add permissions required by role for installation of framework */
 create role if not exists data_clean_room_role;
 
-/*************************************************************************************************************
-Script:             Data Clean Room - Native App - Provider Initialization
-Create Date:        2023-03-29
-Author:             M. Rainey
-Description:        Cleanroom Native App -- Provider object and data initialization
-                    Assumes Native Apps are enabled for the account
-Copyright © 2023 Snowflake Inc. All rights reserved
-*************************************************************************************************************
-SUMMARY OF CHANGES
-Date(yyyy-mm-dd)    Author                              Comments
-------------------- -------------------                 --------------------------------------------
-2023-03-29          M. Rainey                           Initial Creation
-2023-04-19          M. Rainey                           Updated to address feature changes. Added cross account listing setup process.
-2023-07-14          G. Lorence                          Updated cleanup commands
-2023-08-01          B. Barker                           Moved Templates to a database/share
-2023-08-02          R. Schnabel                         Moved templates back to provider_db
-***************************************************************************************************************************************************/
-
-/* cleanup provider */
-/*
-use role accountadmin;
-alter listing if exists dcr_uvn_oap_dev_app set state = unpublished;
-drop listing if exists dcr_uvn_oap_dev_app;
-drop share if exists dcr_uvn_oap_dev_provider_data;
-drop database if exists dcr_uvn_oap_dev_provider_db;
-drop database if exists dcr_uvn_oap_dev_dev;
-drop database if exists dcr_uvn_oap_dev_package;
-drop database if exists dcr_uvn_oap_dev_PNB72330;
-*/
-
 /* Setup roles */
 
 use role accountadmin;
